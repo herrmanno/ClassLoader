@@ -1,12 +1,12 @@
 module ho.classloader {
 
 	export interface ILoaderConfig {
-		loadType: LoadType;
-		urlTemplate: string;
-		useDir: boolean;
-		useMin: boolean;
-		exists: (name: string)=>boolean;
-		cache: boolean;
+		loadType?: LoadType;
+		urlTemplate?: string;
+		useDir?: boolean;
+		useMin?: boolean;
+		exists?: (name: string)=>boolean;
+		cache?: boolean;
 	}
 
 	export class LoaderConfig implements ILoaderConfig {
