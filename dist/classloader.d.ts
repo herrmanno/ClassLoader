@@ -20,11 +20,11 @@ declare module ho.classloader {
 }
 declare module ho.classloader {
     interface ILoadArguments {
-        name: string;
+        name?: string;
         url?: string;
-        parent: boolean;
-        expose: boolean;
-        super: string;
+        parent?: boolean;
+        expose?: boolean;
+        super?: string;
     }
     class LoadArguments implements ILoadArguments {
         name: string;
@@ -62,6 +62,8 @@ declare module ho.classloader {
     }
 }
 declare module ho.classloader {
+    function config(c: ILoaderConfig): void;
+    function load(arg: ILoadArguments): PromiseOfClasses;
 }
 declare module ho.classloader {
     type clazz = Function;
