@@ -1,0 +1,31 @@
+{
+  "name": "ClassLoader",
+  "main": "dist/classloader.js",
+  "version": "0.0.0",
+  "homepage": "https://github.com/herrmanno/classloader",
+  "authors": [
+    "OHerrmann92 <O.herrmann92@gmail.com>"
+  ],
+  "description": "Classloader for non-module TypeScript-Class files",
+  "keywords": [
+    "typescript",
+    "classes",
+    "loader"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "tsconfig.json",
+    "gulp-tsconfig.json",
+    "gulpfile.js",
+    "package.json",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+    ],
+    "dependencies": {
+        "ho-promise": "latest"
+    }
+
+}

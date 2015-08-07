@@ -1,0 +1,22 @@
+{
+    "version": "1.5.0-beta",
+    "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs",
+        "noEmitOnError": false,
+        "sortOutput": true,
+        "removeComments": false
+    },
+    "compileOnSave": false,
+    "files": [
+        "src/ho/classloader/util/get.ts",
+        "src/ho/classloader/util/expose.ts",
+        "src/ho/classloader/xhr/get.ts",
+        "src/ho/classloader/types.ts",
+        "src/ho/classloader/loadarguments.ts",
+        "src/ho/classloader/loaderconfig.ts",
+        "src/ho/classloader/loadtype.ts",
+        "src/ho/classloader/classloader.ts",
+        "src/ho/classloader/main.ts"
+    ]
+}
