@@ -41,7 +41,6 @@ declare module ho.classloader {
         urlTemplate?: string;
         useDir?: boolean;
         useMin?: boolean;
-        exists?: (name: string) => boolean;
         cache?: boolean;
     }
     class LoaderConfig implements ILoaderConfig {
@@ -49,7 +48,6 @@ declare module ho.classloader {
         urlTemplate: string;
         useDir: boolean;
         useMin: boolean;
-        exists: (name: string) => boolean;
         cache: boolean;
         constructor(c?: ILoaderConfig);
     }

@@ -5,7 +5,7 @@ module ho.classloader {
 		urlTemplate?: string;
 		useDir?: boolean;
 		useMin?: boolean;
-		exists?: (name: string)=>boolean;
+		//exists?: (name: string)=>boolean;
 		cache?: boolean;
 	}
 
@@ -15,7 +15,7 @@ module ho.classloader {
 		urlTemplate: string;
 		useDir: boolean;
 		useMin: boolean;
-		exists: (name: string)=>boolean;
+		//exists: (name: string)=>boolean;
 		cache: boolean;
 
 		constructor(c: ILoaderConfig = <ILoaderConfig>{}) {
@@ -23,7 +23,7 @@ module ho.classloader {
 			this.urlTemplate = c.urlTemplate || "${name}.js"
 			this.useDir = typeof c.useDir === 'boolean' ? c.useDir : true;
 			this.useMin = typeof c.useMin === 'boolean' ? c.useMin : false;
-			this.exists = c.exists || this.exists.bind(this);
+			//this.exists = c.exists || this.exists.bind(this);
 			this.cache = typeof c.cache === 'boolean' ? c.cache : true;
 		}
 
