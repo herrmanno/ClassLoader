@@ -1,11 +1,11 @@
 module ho.classloader {
 
 	export interface ILoadArguments {
-		name: string;
+		name?: string;
 		url?: string;
-		parent: boolean;
-		expose: boolean;
-		super: string;
+		parent?: boolean;
+		expose?: boolean;
+		super?: string;
 	}
 
 	export class LoadArguments implements ILoadArguments {

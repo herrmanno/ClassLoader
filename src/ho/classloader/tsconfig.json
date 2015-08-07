@@ -24,6 +24,6 @@
         "./types.ts",
         "./util/expose.ts",
         "./util/get.ts",
-        "./xhr/xhr.ts"
+        "./xhr/get.ts"
     ]
 }

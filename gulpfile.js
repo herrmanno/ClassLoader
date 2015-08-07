@@ -15,7 +15,7 @@ var name = 'ho-classloader';
 
 var dist = 'dist';
 
-var entry = 'main.js';
+var entry = 'classloader.js';
 
 
 gulp.task('clean', function() {
