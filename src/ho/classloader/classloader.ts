@@ -135,7 +135,7 @@ module ho.classloader {
 			})
 			.then(p => {
 				parents = p;
-				let ret = "\nfunction(){return " + arg.name + "}();";
+				let ret = "\n(function(){return " + arg.name + ";})();";
 				let src = source + ret + "\n//#sourceURL=" + arg.url;
 				let clazz = eval(src);
 				if(arg.expose)
