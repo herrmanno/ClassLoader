@@ -21,6 +21,7 @@ module ho.classloader {
 			this.url = arg.url || resolveUrl(arg.name);
 			this.parent = arg.parent || true;
 			this.expose = arg.expose || true;
+			this.super = arg.super;
 		}
 
 	}
