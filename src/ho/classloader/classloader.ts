@@ -73,8 +73,8 @@ module ho.classloader {
 					let src = arg.url;
 					let script = document.createElement('script');
 					script.onload = function() {
-						if(typeof util.get(name) === 'function')
-							resolve([util.get(name)]);
+						if(typeof util.get(arg.name) === 'function')
+							resolve([util.get(arg.name)]);
 						else
 							reject(`Error while loading Class ${arg.name}`)
 					}.bind(this);
