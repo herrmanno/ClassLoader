@@ -24,14 +24,14 @@ declare module ho.classloader {
         url?: string;
         parent?: boolean;
         expose?: boolean;
-        super?: string;
+        super?: Array<string>;
     }
     class LoadArguments implements ILoadArguments {
         name: string;
         url: string;
         parent: boolean;
         expose: boolean;
-        super: string;
+        super: Array<string>;
         constructor(arg: ILoadArguments, resolveUrl: (name: string) => string);
     }
 }

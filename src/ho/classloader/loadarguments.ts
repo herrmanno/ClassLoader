@@ -5,7 +5,7 @@ module ho.classloader {
 		url?: string;
 		parent?: boolean;
 		expose?: boolean;
-		super?: string;
+		super?: Array<string>;
 	}
 
 	export class LoadArguments implements ILoadArguments {
@@ -14,7 +14,7 @@ module ho.classloader {
 		url: string;
 		parent: boolean;
 		expose: boolean;
-		super: string;
+		super: Array<string>;
 
 		constructor(arg: ILoadArguments, resolveUrl: (name:string)=>string) {
 			this.name = arg.name;

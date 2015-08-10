@@ -42,7 +42,8 @@ module ho.classloader {
 			if(!!arg.parent) {
 				this.getParentName(arg.url)
 				.then(parentName => {
-					if(arg.super === parentName)
+					//if(arg.super === parentName)
+					if(arg.super.indexOf(parentName) !== -1)
 						return [];
 					else
 						return self.load({name: parentName, parent: true, expose: arg.expose, super: arg.super})
@@ -95,7 +96,8 @@ module ho.classloader {
 				source = src;
 				if(!!arg.parent) {
 					let parentName = self.parseParentFromSource(src);
-					if(arg.super === parentName)
+					//if(arg.super === parentName)
+					if(arg.super.indexOf(parentName) !== -1)
 						return [];
 					else
 						return self.load({name: parentName, parent: true, expose: arg.expose, super: arg.super});
@@ -127,7 +129,8 @@ module ho.classloader {
 				source = src;
 				if(!!arg.parent) {
 					let parentName = self.parseParentFromSource(src);
-					if(arg.super === parentName)
+					//if(arg.super === parentName)
+					if(arg.super.indexOf(parentName) !== -1)
 						return [];
 					else
 						return self.load({name: parentName, parent: true, expose: arg.expose, super: arg.super});
