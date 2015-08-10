@@ -49,7 +49,7 @@ module ho.classloader {
 				})
 				.then(p => {
 					parents = p
-					load_internal();
+					return load_internal();
 				})
 				.then(clazz => {
 					if(self.conf.cache)
