@@ -105,7 +105,7 @@ module ho.classloader {
 			})
 			.then(p => {
 				parents = p;
-				let src = source + "\nreturn " + arg.name + "\n//#sourceURL=" + arg.url;
+				let src = source + "\nreturn " + arg.name + "\n//#sourceURL=" + window.location.href + arg.url;
 				let clazz = new Function(src)();
 				if(arg.expose)
 					util.expose(arg.name, clazz);
@@ -139,7 +139,7 @@ module ho.classloader {
 			.then(p => {
 				parents = p;
 				let ret = "\n(function(){return " + arg.name + ";})();";
-				let src = source + ret + "\n//#sourceURL=" + arg.url;
+				let src = source + ret + "\n//#sourceURL=" + window.location.href + arg.url;
 				let clazz = eval(src);
 				if(arg.expose)
 					util.expose(arg.name, clazz);
