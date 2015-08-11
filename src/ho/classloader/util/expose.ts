@@ -7,6 +7,7 @@ module ho.classloader.util {
 
 		path.map(part => {
 			global[part] = global[part] || {};
+			global = global[part];
 		})
 
 		if(!!global[name])

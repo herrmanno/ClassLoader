@@ -69,7 +69,7 @@ module ho.classloader {
 			return p;
 
 
-			function load_internal() {
+			function load_internal(): PromiseOfClasses {
 				return new ho.promise.Promise<clazz[], any>((resolve, reject) => {
 					let src = arg.url;
 					let script = document.createElement('script');
@@ -143,7 +143,7 @@ module ho.classloader {
 				let clazz = eval(src);
 				if(arg.expose)
 					util.expose(arg.name, clazz);
-				return util.get(arg.name)
+				return clazz;
 			})
 			.then(clazz => {
 				if(self.conf.cache)
