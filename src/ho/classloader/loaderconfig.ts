@@ -1,5 +1,10 @@
 module ho.classloader {
 
+	export enum WarnLevel {
+		INFO,
+		ERROR
+	}
+
 	export interface ILoaderConfig {
 		loadType?: LoadType;
 		urlTemplate?: string;
@@ -7,6 +12,7 @@ module ho.classloader {
 		useMin?: boolean;
 		//exists?: (name: string)=>boolean;
 		cache?: boolean;
+		warnLevel?: WarnLevel
 	}
 
 	export class LoaderConfig implements ILoaderConfig {
@@ -17,6 +23,7 @@ module ho.classloader {
 		useMin: boolean;
 		//exists: (name: string)=>boolean;
 		cache: boolean;
+		warnLevel: WarnLevel;
 
 		constructor(c: ILoaderConfig = <ILoaderConfig>{}) {
 			this.loadType = c.loadType || LoadType.EVAL;
@@ -25,6 +32,7 @@ module ho.classloader {
 			this.useMin = typeof c.useMin === 'boolean' ? c.useMin : false;
 			//this.exists = c.exists || this.exists.bind(this);
 			this.cache = typeof c.cache === 'boolean' ? c.cache : true;
+			this.warnLevel = c.warnLevel || WarnLevel.INFO;
 		}
 
 	}
