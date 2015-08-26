@@ -11,7 +11,7 @@ module ho.classloader.xhr {
                             resolve(resp);
                         }
                         else {
-                            reject(resp);
+                            reject(xmlhttp.statusText);
                         }
                     }
                 };

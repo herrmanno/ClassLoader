@@ -67,12 +67,12 @@ declare module ho.classloader {
     type clazz = Function;
     type PromiseOfClasses = ho.promise.Promise<clazz[], any>;
 }
-declare module ho.classloader.xhr {
-    function get(url: string): ho.promise.Promise<string, string>;
-}
 declare module ho.classloader.util {
     function expose(name: string, obj: any): void;
 }
 declare module ho.classloader.util {
     function get(path: string, obj?: any): any;
+}
+declare module ho.classloader.xhr {
+    function get(url: string): ho.promise.Promise<string, string>;
 }
