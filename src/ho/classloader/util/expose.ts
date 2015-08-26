@@ -1,5 +1,5 @@
 module ho.classloader.util {
-	export function expose(name:string, obj:any) {
+	export function expose(name:string, obj:any, error = false) {
 		let path = name.split('.');
 		name = path.pop();
 
@@ -10,8 +10,14 @@ module ho.classloader.util {
 			global = global[part];
 		})
 
-		if(!!global[name])
-			throw "Global object " + path.join('.') + "." + name + " already exists";
+		if(!!global[name]) {
+			let msg = "Global object " + path.join('.') + "." + name + " already exists";
+			if(error)
+				throw msg;
+			else
+				console.info(msg);
+
+		}
 
 		global[name] = obj;
 	}

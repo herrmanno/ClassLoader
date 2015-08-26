@@ -1,4 +1,3 @@
-/// <reference path="bower_components/ho-promise/dist/promise.d.ts" />
 declare module ho.classloader {
     let mapping: {
         [key: string]: string;
@@ -8,7 +7,7 @@ declare module ho.classloader {
         private cache;
         constructor(c?: ILoaderConfig);
         config(c: ILoaderConfig): void;
-        load(arg: ILoadArguments): promise.Promise<Function[], any>;
+        load(arg: ILoadArguments): any;
         protected load_script(arg: ILoadArguments): PromiseOfClasses;
         protected load_function(arg: ILoadArguments): PromiseOfClasses;
         protected load_eval(arg: ILoadArguments): PromiseOfClasses;
@@ -36,12 +35,17 @@ declare module ho.classloader {
     }
 }
 declare module ho.classloader {
+    enum WarnLevel {
+        INFO = 0,
+        ERROR = 1,
+    }
     interface ILoaderConfig {
         loadType?: LoadType;
         urlTemplate?: string;
         useDir?: boolean;
         useMin?: boolean;
         cache?: boolean;
+        warnLevel?: WarnLevel;
     }
     class LoaderConfig implements ILoaderConfig {
         loadType: LoadType;
@@ -49,6 +53,7 @@ declare module ho.classloader {
         useDir: boolean;
         useMin: boolean;
         cache: boolean;
+        warnLevel: WarnLevel;
         constructor(c?: ILoaderConfig);
     }
 }
@@ -68,7 +73,7 @@ declare module ho.classloader {
     type PromiseOfClasses = ho.promise.Promise<clazz[], any>;
 }
 declare module ho.classloader.util {
-    function expose(name: string, obj: any): void;
+    function expose(name: string, obj: any, error?: boolean): void;
 }
 declare module ho.classloader.util {
     function get(path: string, obj?: any): any;

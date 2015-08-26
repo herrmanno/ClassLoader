@@ -108,7 +108,7 @@ module ho.classloader {
 				let src = source + "\nreturn " + arg.name + "\n//# sourceURL=" + window.location.href + arg.url;
 				let clazz = new Function(src)();
 				if(arg.expose)
-					util.expose(arg.name, clazz);
+					util.expose(arg.name, clazz, self.conf.warnLevel == WarnLevel.ERROR);
 				return clazz
 			})
 			.then(clazz => {
@@ -142,7 +142,7 @@ module ho.classloader {
 				let src = source + ret + "\n//# sourceURL=" + window.location.href + arg.url;
 				let clazz = eval(src);
 				if(arg.expose)
-					util.expose(arg.name, clazz);
+					util.expose(arg.name, clazz, self.conf.warnLevel == WarnLevel.ERROR);
 				return clazz;
 			})
 			.then(clazz => {
